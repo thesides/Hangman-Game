@@ -155,13 +155,23 @@ function Plano (){
 //function to run if the word is Marfa
 function Marfa (){
 	document.onkeyup = function() {
-	var xuserGuess = event.key;
+	var userGuess = event.key;
 
-	if (xuserGuess === "m" || xuserGuess === "a" || xuserGuess === "r" || xuserGuess === "f" || xuserGuess === "a"){
-		correctLetter = correctLetter + xuserGuess;
+	if (userGuess === "m" || userGuess === "a" || userGuess === "r" || userGuess === "f" || userGuess === "a"){
+		
+		remainCount = letterCount--;
+		spaces = " ";
+		for (var i = 0; i < letterCount; i++) {
+				spaces = spaces + " _ ";
+				game.innerHTML = spaces;
+			}
+
+
+		correctLetter = correctLetter + userGuess;
 		game.innerHTML = correctLetter + spaces;
 		//game.innerHTML = correctLetter + spaces;
-		remainCount = letterCount--;
+		
+		
 		console.log(remainCount)
 		if (remainCount === 0 && guessCount > 0){
 			//gameResult = "win";
@@ -177,7 +187,7 @@ function Marfa (){
 		
 	}
 	else {
-		incorrectLetter = xuserGuess;
+		incorrectLetter = userGuess;
 		console.log("That is incorrect " + incorrectLetter);
 		if (guessCount >= 1){
 			guessCount = guessCount-1;
@@ -200,9 +210,11 @@ function Marfa (){
 
 function letsPlay (){
 	document.onkeyup = function() {
-		var userGuess = event.key;
-	
+		
+		userGuess = event.key;
+		
 		if (userGuess === "1"){
+		guessCount = 15;
 		spaces = "";
 		//picks a random word from the wordAtPlay array	
 		computerGuess = wordAtPlay[Math.floor(Math.random() * wordAtPlay.length)];
@@ -220,7 +232,7 @@ function letsPlay (){
 
 		gameResult.innerHTML = "Game Result: ";
 
-		}
+		
 		if (computerGuess === wordAtPlay[0]){
 			Houston();
 			console.log(wordAtPlay[0]);
@@ -246,6 +258,7 @@ function letsPlay (){
 			game.innerHTML = "<h1>That is not the 1 key, Please Try Again</h1>"
 		}
 	}
+}
 
 };
 
