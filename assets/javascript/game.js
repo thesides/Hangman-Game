@@ -13,9 +13,9 @@ var wordAtPlay = ["Houston", "Dallas", "Austin", "Plano", "Marfa"];
 //var spaces will be the blank letter spaces, I know it will be a string
 var spaces = " ";
 //var correctLetter is when the user guesses correctly
-var correctLetter = []
+var correctLetter = "";
 //var incorrectLetter is when the user guesse incorrectly
-var incorrectLetter = []
+var incorrectLetter = "";
 
 var game = document.getElementById('game');
 
@@ -155,11 +155,12 @@ function Plano (){
 //function to run if the word is Marfa
 function Marfa (){
 	document.onkeyup = function() {
-	var userGuess = event.key;
+	var xuserGuess = event.key;
 
-	if (userGuess === "m" || userGuess === "a" || userGuess === "r" || userGuess === "f" || userGuess === "a"){
-		correctLetter = userGuess;
+	if (xuserGuess === "m" || xuserGuess === "a" || xuserGuess === "r" || xuserGuess === "f" || xuserGuess === "a"){
+		correctLetter = correctLetter + xuserGuess;
 		game.innerHTML = correctLetter + spaces;
+		//game.innerHTML = correctLetter + spaces;
 		remainCount = letterCount--;
 		console.log(remainCount)
 		if (remainCount === 0 && guessCount > 0){
@@ -176,7 +177,7 @@ function Marfa (){
 		
 	}
 	else {
-		incorrectLetter = userGuess;
+		incorrectLetter = xuserGuess;
 		console.log("That is incorrect " + incorrectLetter);
 		if (guessCount >= 1){
 			guessCount = guessCount-1;
