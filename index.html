@@ -8,20 +8,35 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
-	<div class="jumbotron">
-	<h1>Hangman</h1>
-		<p>Press 1 Play!</p>
-		<p><a class="btn btn-primary btn-lg" id="startButton" role="button">Lets Play!</a></p>
-	</div>
+	<div class="container-fluid">
+		
+				<div class="jumbotron">
+					<div class="row">
+						<div class="col-md-12">
+						<h1 class="gameTitle text-center">Hangman: Texas Cities Edition!</h1>
+						<h2 class="text-center">Press 1 to Play!</h2>
+						<p class="text-center">Your goal is to try and guess this famous Texas city</p>
+						</div>
+					</div>
+				</div>
+		
+		
 
-	
-	<div id="game">
-	</div>
-	<div id="guessesremaining">
-	</div>
-	<div id="pastGuess">
-	</div>
-	<div id="gameResult">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="gameWord text-center" id="game">
+				</div>
+
+				<div class="gameWord text-center" id="guessesremaining">
+				</div>
+
+				<div class="gameWord text-center" id="pastGuess">
+				</div>
+
+				<div class="gameWord text-center" id="gameResult">
+				</div>
+			</div>
+		</div>
 	</div>
 
 
